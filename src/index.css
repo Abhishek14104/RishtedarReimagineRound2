@@ -6,13 +6,35 @@
     @font-face {
         font-family: 'Porsche';
         font-weight: 400;
-        src: url('/porsche-next-w-la-semi-bold.min.b5f6fca7225aa73578f65320bcf79b45.ttf') format('truetype');
+        src: url('./assets/font/PorscheNext-Regular.otf') format('OpenType');
     }
+
     @font-face {
         font-family: 'Porsche';
-        font-weight: 500;
-        src: url('/porsche-next-w-la-semi-bold.min.b5f6fca7225aa73578f65320bcf79b45.ttf') format('truetype');
+        font-weight: 600;
+        src: url('./assets/font/PorscheNext-SemiBold.otf') format('OpenType');
+    }
+
+    @font-face {
+        font-family: 'Porsche';
+        font-weight: 900;
+        src: url('./assets/font/PorscheNext-Bold.ttf') format('TrueType');
+    }
+
+    @font-face {
+        font-family: 'Porsche';
+        font-weight: 200;
+        src: url('./assets/font/PorscheNext-Thin.otf') format('OpenType');
     }
 }
 
 
+body {
+    z-index: -100;
+    background-color: white;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

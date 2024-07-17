@@ -5,6 +5,9 @@ import Navbar from './components/Navbar'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ReactLenis } from 'lenis/react'
 import Showcase911 from './sections/Showcase911';
+import HeroSection from './sections/HeroSection';
+import LoadingAnimation from './components/LoadingAnimation';
+import StartAnimation from './components/StartAnimation';
 
 function App() {
 
@@ -21,6 +24,8 @@ function App() {
           <motion.div id='scroll-bar' className='w-full h-2 bg-black z-50 sticky top-[99vh]' />
         </div> */}
         <Navbar />
+        {/* <HeroSection /> */}
+        <StartAnimation />
         <LandingPage />
         <Experience />
         <Showcase911 />

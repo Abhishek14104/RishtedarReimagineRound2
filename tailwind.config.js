@@ -31,6 +31,10 @@ export default {
         '.text-stroke-white': {
           '-webkit-text-stroke-color': 'white',
         },
+        '.text-stroke-black': {
+          '-webkit-text-stroke-color': 'black',
+        },
+        
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
     },

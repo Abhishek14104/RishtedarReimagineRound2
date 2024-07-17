@@ -27,12 +27,12 @@ function LandingPage(props) {
                         muted
                         loop
                         src={LPvideo}
-                        style={{ borderRadius: round, width: vidWidth }}
+                        style={{ borderRadius: round, width: vidWidth, filter: "brightness(80%)" }}
                         className="w-full h-screen absolute left-1/2 -translate-x-1/2 object-cover -z-50"
                     />
                 </motion.div>
                 <div className="relative text-white leading-[6.5rem] items-center flex flex-col mt-[100px]">
-                    <div className="flex flex-col items-center text-[120px] font-semibold uppercase">
+                    <div className="flex flex-col items-center text-[100px] font-semibold uppercase">
                         <motion.div
                             initial="initial"
                             animate="animate"

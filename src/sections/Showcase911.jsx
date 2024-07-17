@@ -4,6 +4,7 @@ import logo911 from '../assets/911/911-logo.svg'
 import Pic1 from '../assets/911/911-pic3.png'
 import Pic2 from '../assets/911/911-pic2.png'
 import Pic3 from '../assets/911/911-pic1.png'
+import TextReveal from '../components/TextReveal'
 
 export default function Showcase911() {
 
@@ -32,7 +33,11 @@ export default function Showcase911() {
                 </motion.div>
             </div>
             <div>
-                <p className='text-[1.8vw] w-[45vw] text-center leading-[1.15]'>Crucial to the unique 911 driving experience: the optimal set-up. This includes new engine mounts, a completely revised chassis, and even wider wheels to transform the increased power output into breathtaking dynamics.</p>
+                <p className='text-[1.8vw] w-[45vw] text-center leading-[1.15]'>
+                    <TextReveal stagger={0.01}>
+                        Crucial to the unique 911 driving experience: the optimal set-up. This includes new engine mounts, a completely revised chassis, and even wider wheels to transform the increased power output into breathtaking dynamics.
+                    </TextReveal>
+                </p>
             </div>
             <div className='flex flex-row gap-10 w-full relative -left-5 my-[100px]'>
                 <img className='h-[85vh] rounded-3xl w-[35%] object-cover' src={Pic3} />

@@ -3,8 +3,8 @@ import { motion, cubicBezier, AnimatePresence, animate } from 'framer-motion';
 import TextHover from './TextHover';
 import modelsPic from '../assets/menu/models.jpg'
 import servicesPic from '../assets/menu/services.webp'
-import dealerPic from '../assets/menu/dealer.webp'
-import contactPic from '../assets/menu/contact-us.jpg'
+import dealerPic from '../assets/menu/dealer.avif'
+import contactPic from '../assets/menu/contact-us.webp'
 import lifestylePic from '../assets/menu/lifestyle.jpg'
 
 
@@ -50,54 +50,26 @@ export default function Menu({ open }) {
                 exit: { backgroundColor: "#00000000" }
               }}
               transition={{
-                duration: 1.5,
+                duration: 1,
                 delay: 0.2
               }}
               className='absolute top-0 w-full h-screen'></motion.div>
-            <motion.div
-              variants={{
-                initial: { y: "-100%" },
-                animate: { y: "-20%" },
-                exit: { y: "-100%" }
-              }}
-              transition={{
-                ease: easing,
-                duration: 0.8
-              }}
-              className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
-            <motion.div
-              variants={{
-                initial: { y: "-100%" },
-                animate: { y: "-20%" },
-                exit: { y: "-100%" }
-              }}
-              transition={{
-                ease: easing,
-                duration: 0.8
-              }}
-              className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
-            <motion.div
-              variants={{
-                initial: { y: "-100%" },
-                animate: { y: "-20%" },
-                exit: { y: "-100%" }
-              }}
-              transition={{
-                ease: easing,
-                duration: 0.8
-              }}
-              className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
-            <motion.div
-              variants={{
-                initial: { y: "-100%" },
-                animate: { y: "-20%" },
-                exit: { y: "-100%" }
-              }}
-              transition={{
-                ease: easing,
-                duration: 0.8
-              }}
-              className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
+            {[1, 2, 3, 4].map((id) => {
+              return (
+                <motion.div
+                  key={id}
+                  variants={{
+                    initial: { y: "-100%" },
+                    animate: { y: "-20%" },
+                    exit: { y: "-100%" }
+                  }}
+                  transition={{
+                    ease: easing,
+                    duration: 0.7
+                  }}
+                  className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
+              )
+            })}
           </motion.div>
           <motion.div initial="initial" animate="animate" exit="exit" className='relative uppercase font-semibold text-[2.8vw] ml-[5vw] flex flex-col gap-10'>
             {items.map((item, index) => {
@@ -114,9 +86,9 @@ export default function Menu({ open }) {
             })}
           </motion.div>
           <motion.div variants={{
-            initial: { y: 100, x: 20, opacity: 0},
-            animate: { y: 0, x: 0, opacity: 1, transition: { delay: 1} },
-            exit: { y: 100, x: 20, opacity: 0, transition: { delay: 0.25, ease: "backIn"}}
+            initial: { y: 100, x: 20, opacity: 0 },
+            animate: { y: 0, x: 0, opacity: 1, transition: { delay: 1 } },
+            exit: { y: 100, x: 20, opacity: 0, transition: { delay: 0.25, ease: "backIn" } }
           }} className='relative mr-[13vw] mt-[5vh] w-[40vw] h-[70vh]'>
             {photos.map((item) => {
               return (

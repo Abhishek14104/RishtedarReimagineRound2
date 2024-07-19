@@ -3,13 +3,20 @@ import { Application } from '@splinetool/runtime'
 import LoadingAnimation from '../components/LoadingAnimation';
 import gsap from 'gsap';
 import { cubicBezier, useInView } from 'framer-motion';
+import mobileHero from '../assets/mobileHero.png'
 
 export default function HeroSection() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true })
     const [loading, setLoading] = useState(true);
     const [animate, setAnimate] = useState(false);
-    const easing = cubicBezier(.99,-0.01,.53,.99)
+    let isMobile = false;
+    const easing = cubicBezier(.99, -0.01, .53, .99)
+
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+        isMobile = true
+    }
 
     function onLoad(car, text) {
         setLoading(false)
@@ -28,23 +35,41 @@ export default function HeroSection() {
     }
 
     useEffect(() => {
-        const canvas = document.getElementById('canvas3d');
-        const app = new Application(canvas);
-        app.load('https://prod.spline.design/Dn9mW3MSo0IjKVYM/scene.splinecode').then(() => {
-            const car = app.findObjectByName("car");
-            const text = app.findObjectByName("Text");
-            onLoad(car, text);
-        })
+        if (!isMobile) {
+            const canvas = document.getElementById('canvas3d');
+            const app = new Application(canvas);
+            app.load('https://prod.spline.design/Dn9mW3MSo0IjKVYM/scene.splinecode').then(() => {
+                const car = app.findObjectByName("car");
+                const text = app.findObjectByName("Text");
+                onLoad(car, text);
+            })
+        }
     })
 
     return (
-        <div className='w-full h-[100vh] relative'>
-            <LoadingAnimation loading={loading} setAnimate={setAnimate} />
-            <div ref={ref} className='absolute w-full h-screen'>
-                <canvas id='canvas3d' />
-            </div>
-            <p className='absolute w-fit h-fit bottom-[4vh] text-[2vw] font-bold text-black opacity-50 uppercase left-[1.5vw]'>since 1931</p>
-            <p className='absolute w-fit h-fit bottom-[4vh] text-[1.25vw] font-bold text-black uppercase right-[1.5vw]'><span className='opacity-40'>stuttgart,</span> germany</p>
+        <div className='w-full h-[100dvh] relative bg-[#f5f5f5]'>
+            <LoadingAnimation loading={isMobile ? false : loading} setAnimate={setAnimate} />
+            {!isMobile && (
+                <div ref={ref} className='absolute w-full h-screen'>
+                    <canvas id='canvas3d' />
+                </div>
+            )}
+            {isMobile && (
+                <div className='absolute w-full h-[100dvh] flex flex-col justify-center items-center text-[20vw] gap-[3vw] leading-tight'>
+                    <div>
+                        <p className='font-semibold opacity-40 text-center uppercase'>the</p>
+                        <p className='font-semibold opacity-40 text-center uppercase'>one</p>
+                    </div>
+                    <div>
+                        <p className='font-semibold opacity-40 text-center uppercase'>and</p>
+                        <p className='font-semibold opacity-40 text-center uppercase'>always</p>
+                    </div>
+
+                    <img className='absolute w-[80%]' src={mobileHero} />
+                </div>
+            )}
+            <p className='absolute w-fit h-fit bottom-4 md:bottom-[4vh] text-2xl md:text-[2vw] font-bold text-black opacity-50 uppercase left-[5vw] md:left-[1.5vw]'>since 1931</p>
+            <p className='absolute w-fit h-fit bottom-4 md:bottom-[4vh] text-lg md:text-[1.25vw] font-bold text-black uppercase right-[5vw] md:right-[1.5vw]'><span className='opacity-40'>stuttgart,</span> germany</p>
         </div>
     )
 }

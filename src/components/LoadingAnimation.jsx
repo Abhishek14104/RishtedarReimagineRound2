@@ -31,12 +31,23 @@ export default function LoadingAnimation({ loading, setAnimate }) {
             transition={{
                 delay: 3
             }}
-            className='fixed w-full h-screen z-50'>
+            className='fixed w-full h-[100dvh] z-50'>
 
             <motion.div
                 animate={(timer < 100) ? "open" : "close"}
                 id='bg'
-                className='flex flex-row absolute top-0 w-full h-screen -z-10'>
+                className='flex flex-row absolute top-0 w-full h-[100dvh] -z-10'>
+                <motion.div
+                    variants={{
+                        open: { backgroundColor: "#000000ff" },
+                        close: { backgroundColor: "#00000000" }
+                    }}
+                    transition={{
+                        delay: 2,
+                        duration: 0.8
+                    }}
+                    className='absolute top-0 w-full h-[100dvh]'
+                 />
                 <motion.div
                     variants={{
                         open: { y: "0%" },
@@ -47,7 +58,7 @@ export default function LoadingAnimation({ loading, setAnimate }) {
                         ease: easing,
                         delay: 2
                     }}
-                    className='bg-white h-screen w-1/4'></motion.div>
+                    className='bg-white h-[110dvh] w-full rounded-b-3xl'></motion.div>
                 <motion.div
                     variants={{
                         open: { y: "0%" },
@@ -60,7 +71,7 @@ export default function LoadingAnimation({ loading, setAnimate }) {
                         ease: easing,
                         delay: 2.1
                     }}
-                    className='bg-white h-screen w-1/4'></motion.div>
+                    className='bg-white h-[110dvh] w-full rounded-b-3xl'></motion.div>
                 <motion.div
                     variants={{
                         open: { y: "0%" },
@@ -73,7 +84,7 @@ export default function LoadingAnimation({ loading, setAnimate }) {
                         ease: easing,
                         delay: 2.2
                     }}
-                    className='bg-white h-screen w-1/4'></motion.div>
+                    className='bg-white h-[110dvh] w-full rounded-b-3xl hidden md:block'></motion.div>
                 <motion.div
                     variants={{
                         open: { y: "0%" },
@@ -86,12 +97,12 @@ export default function LoadingAnimation({ loading, setAnimate }) {
                         ease: easing,
                         delay: 2.3
                     }}
-                    className='bg-white h-screen w-1/4'></motion.div>
+                    className='bg-white h-[110dvh] w-full rounded-b-3xl hidden md:block'></motion.div>
             </motion.div>
 
             <motion.p
                 animate={{ opacity: (timer < 100) ? 1 : 0 }}
-                className='text-black absolute h-screen flex items-end whitespace-nowrap font-porsche font-semibold leading-none left-0 text-[120px]'
+                className='text-black absolute h-[100dvh] flex items-end whitespace-nowrap font-porsche font-semibold leading-none left-0 text-[120px]'
             >
                 {timer}
                 <span className='text-[20px] w-full flex gap-3 font-bold'>
@@ -99,18 +110,15 @@ export default function LoadingAnimation({ loading, setAnimate }) {
                 </span>
             </motion.p>
             {(timer < 100) ? <div></div> :
-                <div className='w-full h-screen flex justify-center items-center'>
+                <div className='w-full h-[100dvh] flex justify-center items-center'>
                     <motion.img
                         animate={{ opacity: [0, 1, 1, 0] }}
                         transition={{
                             duration: 2
                         }}
-                        className='h-[25px] object-cover'
+                        className='md:h-[25px] w-[80%] md:w-auto object-cover'
                         src={logo} />
                 </div>}
-
-
-
         </motion.div>
     )
 }

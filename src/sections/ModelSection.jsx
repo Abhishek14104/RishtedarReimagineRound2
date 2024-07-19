@@ -16,8 +16,14 @@ import signCayenne from '../assets/signs/cayenne.svg'
 import TextHover from '../components/TextHover'
 
 import logo from '../assets/logo.svg'
+import ModelCard from '../components/ModelCard'
 
 export default function ModelSection() {
+
+    let isMobile = false;
+    if (window.innerWidth < 768) {
+        isMobile = true;
+    }
 
     const [modelId, setModelId] = useState(0);
     const [modelShow, setModelShow] = useState(false)
@@ -42,6 +48,7 @@ export default function ModelSection() {
     const text3 = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
     const bgColor = useTransform(scrollYProgress, [0.5, 0.7], ["#ffffff", "#000000"])
     const modelOpacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1])
+    const modelY = useTransform(scrollYProgress, [0.4, 1], ["100%", "-110%"]);
 
     useMotionValueEvent(scrollYProgress, "change", (scroll) => {
         if (scroll > 0.6) {
@@ -54,12 +61,21 @@ export default function ModelSection() {
     return (
         <div ref={ref} className='w-full h-[300vh] relative'>
             <motion.div style={{ backgroundColor: bgColor }} className='w-full h-screen sticky top-0 flex justify-center items-center overflow-hidden'>
-                <motion.div className='flex text-[80px] font-semibold gap-5  items-center'>
+                <motion.div className='flex flex-col md:flex-row md:text-[80px] text-[20vw] font-semibold md:gap-5 gap-2 items-center'>
                     <motion.p style={{ opacity: text1 }}>Explore</motion.p>
                     <motion.p style={{ opacity: text2 }}>Other</motion.p>
                     <motion.p style={{ opacity: text3 }}>Models</motion.p>
                 </motion.div>
-                <motion.div style={{ display: modelShow ? "block" : "none", opacity: modelOpacity }} className='w-full h-screen absolute top-0'>
+                <motion.div style={{ y: modelY }} className='absolute top-0 w-full h-screen flex flex-wrap justify-evenly gap-5 md:hidden'>
+                    {models.map((model) => {
+                        return (
+                            <div key={model.id} className='w-[90%] h-[30%]'>
+                                <ModelCard data={model} />
+                            </div>
+                        )
+                    })}
+                </motion.div>
+                <motion.div style={{ display: modelShow && (!isMobile) ? "block" : "none", opacity: modelOpacity }} className='w-full h-screen absolute top-0'>
                     <div className='w-full h-screen absolute'>
                         {models.map((model) => {
                             return (

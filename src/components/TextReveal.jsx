@@ -1,10 +1,10 @@
 import React, { useRef} from 'react'
 import { useInView, motion } from 'framer-motion'
 
-export default function TextReveal({ children, stagger, leading = "leading-none" }) {
+export default function TextReveal({ children, stagger, leading = "leading-none", amount = 0.2 }) {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.2, once: false });
+    const isInView = useInView(ref, { amount: amount, once: true });
 
     return (
         <motion.span

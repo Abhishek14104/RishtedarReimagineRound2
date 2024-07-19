@@ -3,15 +3,15 @@ import TextReveal from './TextReveal';
 
 const JourneyToPerfection = () => {
     return (
-        <div className="flex flex-col items-center text-center my-[150px]">
-            <h1 className="text-[5.5vw] font-bold mb-20">
+        <div className="flex flex-col items-center text-center md:my-[150px] my-[100px]">
+            <h1 className="md:text-[5.5vw] text-[15vw] font-bold mb-20">
                 <TextReveal stagger={0.1}>
                     JOURNEY TO PERFECTION
                 </TextReveal>
             </h1>
-            <div className="flex flex-col md:flex-row justify-around w-full md:w-[90vw] uppercase font-semibold">
-                <div className="mb-8 md:mb-0 md:mx-2">
-                    <span className="text-[2.5vw] leading-3">
+            <div className="flex flex-col md:flex-row justify-around md:text-base text-sm w-full md:w-[90vw] uppercase font-semibold">
+                <div className="mb-8 mx-7 text-left md:text-center md:mb-0 md:mx-2">
+                    <span className="md:text-[2vw] text-[8vw] leading-3">
                         <TextReveal stagger={0}>
                             PASSION
                         </TextReveal>
@@ -23,8 +23,8 @@ const JourneyToPerfection = () => {
                         </TextReveal>
                     </span>
                 </div>
-                <div className="mb-8 md:mb-0 md:mx-2">
-                    <span className="text-[2.5vw] leading-3">
+                <div className="mb-8 mx-7 text-left md:text-center md:mb-0 md:mx-2">
+                    <span className="md:text-[2vw] text-[8vw] leading-3">
                         <TextReveal stagger={0}>
                             INNOVATION
                         </TextReveal>
@@ -36,8 +36,8 @@ const JourneyToPerfection = () => {
                         </TextReveal>
                     </span>
                 </div>
-                <div className="md:mx-2">
-                    <span className="text-[2.5vw] leading-3">
+                <div className="md:mx-2 mx-7 text-left md:text-center">
+                    <span className="md:text-[2vw] text-[8vw] leading-3">
                         <TextReveal stagger={0}>
                             COMMITMENT
                         </TextReveal>

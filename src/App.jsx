@@ -12,6 +12,7 @@ import ModelSection from './sections/ModelSection';
 import Exp from './sections/Exp';
 import JourneyToPerfection from './components/JourneyToPerfection';
 import Social from './sections/Social';
+import SocialMobile from './sections/SocialMobile';
 
 function App() {
 
@@ -27,18 +28,16 @@ function App() {
     <ReactLenis root>
       <div ref={ref} className='font-porsche relative'>
         <div className='w-full h-screen bg-transparent absolute'>
-          <motion.div id='scroll-bar' style={{ height: scrollBar}} className='w-2 bg-white z-50 fixed right-0 top-0 rounded-b-full mix-blend-difference' />
+          <motion.div id='scroll-bar' style={{ height: scrollBar}} className='md:w-2 w-1 bg-white z-50 fixed right-0 top-0 rounded-b-full mix-blend-difference' />
         </div>
         <Navbar />
         <HeroSection />
         <JourneyToPerfection />
-        {/* <StartAnimation /> */}
-        {/* <LandingPage /> */}
-        <Exp />
-        {/* <Experience /> */}
+        <Experience />
         <Showcase911 />
         <ModelSection />
         <Social />
+        <SocialMobile />
       </div>
     </ReactLenis>
   )

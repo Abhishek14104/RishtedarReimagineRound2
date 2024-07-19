@@ -1,36 +1,35 @@
 import React from 'react'
-import Porsche from '../components/Porsche'
-import TextReveal from '../components/TextReveal'
+import videoBg from '../assets/Experience/Porsche-bg.mp4';
+import TextReveal from '../components/TextReveal';
 
-function Experience() {
+export default function Experience() {
     return (
-        <>
-            <div className='w-full h-screen relative'>
-                <div className='w-full h-screen relative'>
-                    <div className='text-black flex flex-row justify-start items-end absolute left-[2vw] bottom-[30vh] text-[7vw] font-semibold'>
-                        <p className=''>The</p>
-                        &nbsp;
-                        <Porsche />
-                        &nbsp;
-                        <div className='relative'>
-                            <p className='font-semibold absolute text-[2.5vw] left-1 -top-6'>
-                                Let's dive into
-                            </p>
-                            <p className=''>Experience</p>
-                            <div className='border-black border-[3px] rounded-md text-[1.4vw] py-1 px-5 flex justify-center items-center absolute left-2'>
-                                Discover The New 911
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='w-[35%] text-[2vw] font-semibold absolute top-[0%] right-[2%] uppercase'>
-                    <TextReveal stagger={0.01}>
-                        FOR OVER 60 YEARS, THE 911 HAS BEEN THE EPITOME OF AN EXCITING, POWERFUL SPORTS CAR SUITABLE FOR EVERYDAY USE. TAKE A SEAT BEHIND THE WHEEL OF THE NEW 911 AND BECOME PART OF A UNIQUE COMMUNITY.
+        <div className='w-full flex md:flex-row flex-col justify-evenly items-center my-10 md:my-0'>
+            <video className='md:w-[30vw] w-[90vw] md:h-[90vh] h-[70vh] rounded-2xl md:mt-[200px] object-cover' autoPlay loop muted id='video'>
+                <source src={videoBg} type='video/mp4'></source>
+            </video>
+            <div className='md:w-[50vw] w-[90vw] md:text-[45px] text-[8vw] leading-none flex flex-col gap-10 mt-[50px] md:mt-0'>
+                <div className='block md:hidden'>
+                    <TextReveal stagger={0.01} leading='leading-tight'>
+                        Anyone who dreams of a Porsche usually has one image in their mind: the 911 has been the epitome of an exciting, powerful sports car with day-to-day usability for 60 years.
                     </TextReveal>
                 </div>
+                <div className='hidden md:block'>
+                    <TextReveal stagger={0.01} leading='leading-tight'>
+                        Anyone who dreams of a Porsche usually has one image in their mind: the 911 has been the epitome of an exciting, powerful sports car with day-to-day usability for 60 years.
+                        Take a seat behind the wheel of the new 911 and become part of a unique community.
+                        The new T-Hybrid technology was derived from motorsport and combines emotive engine sound with outstanding performance.
+                    </TextReveal>
+                </div>
+
+                <div className='border-black font-semibold border-[2px] rounded-full md:text-[1.6vw] text-[5.5vw] md:py-9 py-5 md:px-10 px-8 w-fit flex items-center gap-2'>
+                    Discover The New 911
+                    <svg className='md:w-[2.5vw] w-[8vw]' viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 34L34 14M34 14H14M34 14V34" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                </div>
             </div>
-        </>
+        </div>
     )
 }
-
-export default Experience

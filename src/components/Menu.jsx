@@ -11,6 +11,11 @@ import lifestylePic from '../assets/menu/lifestyle.jpg'
 export default function Menu({ open }) {
   const easing = cubicBezier(.99, -0.01, .53, .99)
 
+  let bgLevel = 4;
+  if(window.innerWidth < 768) {
+    bgLevel = 2
+  }
+
   const [index, setIndex] = useState(0);
 
   const items = ["models", "services", "locate a dealer", "contact us", "porsche lifestyle"]
@@ -54,24 +59,24 @@ export default function Menu({ open }) {
                 delay: 0.2
               }}
               className='absolute top-0 w-full h-screen'></motion.div>
-            {[1, 2, 3, 4].map((id) => {
+            {Array(bgLevel).fill(0).map((id) => {
               return (
                 <motion.div
                   key={id}
                   variants={{
                     initial: { y: "-100%" },
-                    animate: { y: "-20%" },
+                    animate: { y: "0%" },
                     exit: { y: "-100%" }
                   }}
                   transition={{
                     ease: easing,
                     duration: 0.7
                   }}
-                  className='bg-white h-[180vh] w-1/4 rounded-full'></motion.div>
+                  className='bg-white h-[110vh] w-full rounded-b-3xl'></motion.div>
               )
             })}
           </motion.div>
-          <motion.div initial="initial" animate="animate" exit="exit" className='relative uppercase font-semibold text-[2.8vw] ml-[5vw] flex flex-col gap-10'>
+          <motion.div initial="initial" animate="animate" exit="exit" className='relative uppercase font-semibold md:text-[2.8vw] text-3xl md:ml-[5vw] ml-[2vw] flex flex-col gap-10 z-10'>
             {items.map((item, index) => {
               return (
                 <motion.p
@@ -89,7 +94,7 @@ export default function Menu({ open }) {
             initial: { y: 100, x: 20, opacity: 0 },
             animate: { y: 0, x: 0, opacity: 1, transition: { delay: 1 } },
             exit: { y: 100, x: 20, opacity: 0, transition: { delay: 0.25, ease: "backIn" } }
-          }} className='relative mr-[13vw] mt-[5vh] w-[40vw] h-[70vh]'>
+          }} className='relative mr-[13vw] mt-[5vh] w-[40vw] h-[70vh] hidden md:block'>
             {photos.map((item) => {
               return (
                 <AnimatePresence>
@@ -98,7 +103,6 @@ export default function Menu({ open }) {
                       initial={{ y: 100, x: 20, opacity: 0, rotate: -6 }}
                       animate={{ y: 0, x: 0, opacity: 1, rotate: -6 }}
                       exit={{ y: -100, x: -20, opacity: 0, rotate: -6 }}
-
                       className='absolute w-[40vw] h-[70vh] -rotate-6 object-cover rounded-3xl' src={item.photo} />
                   )}
                 </AnimatePresence>

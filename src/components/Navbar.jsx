@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <div>
-      <div className='w-full z-40 fixed top-[10px] flex justify-between items-center px-20 mt-2 text-[18px] font-semibold text-white mix-blend-difference'>
+      <div className='w-full z-40 absolute top-[10px] flex justify-between items-center px-20 mt-2 text-[18px] font-semibold text-white mix-blend-difference'>
         <div className='flex justify-start w-[25%]'>
           <div onClick={() => {setMenuOpen(!menuOpen)}} className='w-fit z-50 text-[20px]'>
             <TextHover>

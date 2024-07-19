@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { motion, cubicBezier } from 'framer-motion'
 import logo from '../assets/logo.svg'
 
-export default function LoadingAnimation({ loading }) {
+export default function LoadingAnimation({ loading, setAnimate }) {
     const [timer, setTimer] = useState(0);
     const easing = cubicBezier(.99,-0.01,.53,.99)
 
@@ -16,8 +16,11 @@ export default function LoadingAnimation({ loading }) {
         if (timer < 100 && loading == false) {
             const timerId = setTimeout(() => {
                 setTimer(timer + 1);
-            }, 20);
+            }, 10);
             return () => clearTimeout(timerId);
+        }
+        if(timer == 100){
+            setAnimate(true);
         }
     }, [timer]);
 
@@ -26,7 +29,7 @@ export default function LoadingAnimation({ loading }) {
         <motion.div
             animate={{ display: (timer < 100) ? "block" : "none" }}
             transition={{
-                delay: 10
+                delay: 3
             }}
             className='fixed w-full h-screen z-50'>
 

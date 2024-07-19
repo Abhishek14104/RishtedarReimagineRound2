@@ -8,6 +8,10 @@ import Showcase911 from './sections/Showcase911';
 import HeroSection from './sections/HeroSection';
 import LoadingAnimation from './components/LoadingAnimation';
 import StartAnimation from './components/StartAnimation';
+import ModelSection from './sections/ModelSection';
+import Exp from './sections/Exp';
+import JourneyToPerfection from './components/JourneyToPerfection';
+import Social from './sections/Social';
 
 function App() {
 
@@ -17,18 +21,24 @@ function App() {
     offset: ["start start", "end end"]
   });
 
+  const scrollBar = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <ReactLenis root>
       <div ref={ref} className='font-porsche relative'>
-        {/* <div className='w-full h-screen absolute'>
-          <motion.div id='scroll-bar' className='w-full h-2 bg-black z-50 sticky top-[99vh]' />
-        </div> */}
+        <div className='w-full h-screen bg-transparent absolute'>
+          <motion.div id='scroll-bar' style={{ height: scrollBar}} className='w-2 bg-white z-50 fixed right-0 top-0 rounded-b-full mix-blend-difference' />
+        </div>
         <Navbar />
-        {/* <HeroSection /> */}
-        <StartAnimation />
-        <LandingPage />
-        <Experience />
+        <HeroSection />
+        <JourneyToPerfection />
+        {/* <StartAnimation /> */}
+        {/* <LandingPage /> */}
+        <Exp />
+        {/* <Experience /> */}
         <Showcase911 />
+        <ModelSection />
+        <Social />
       </div>
     </ReactLenis>
   )

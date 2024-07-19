@@ -1,10 +1,10 @@
 import React, { useRef} from 'react'
 import { useInView, motion } from 'framer-motion'
 
-export default function TextReveal({ children, stagger }) {
+export default function TextReveal({ children, stagger, leading = "leading-none" }) {
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.5, once: false });
+    const isInView = useInView(ref, { amount: 0.2, once: false });
 
     return (
         <motion.span
@@ -14,7 +14,7 @@ export default function TextReveal({ children, stagger }) {
             transition={{
                 staggerChildren: stagger
             }}
-            className='leading-none'>
+            className={leading}>
             {children.split(" ").map((word, index) => {
                 return (
                     <motion.span key={index} className='overflow-hidden inline-flex flex-row'>

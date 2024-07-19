@@ -34,7 +34,7 @@ export default function Menu({ open }) {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div initial="initial" animate="animate" exit="exit" className='w-full h-screen fixed flex flex-row items-center justify-between top-0 z-10'>
+        <motion.div initial="initial" animate="animate" exit="exit" className='w-full h-screen fixed flex flex-row items-center justify-between top-0 z-20'>
           <motion.div
             initial="initial"
             animate="animate"

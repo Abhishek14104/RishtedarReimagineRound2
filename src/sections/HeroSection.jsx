@@ -29,8 +29,9 @@ export default function HeroSection() {
 
             tl.to(car.scale, { duration: 1.5, x: 4, y: 4, z: 4, delay: 2, ease: easing })
                 .to(car.rotation, { y: -0.5, duration: 8 })
-                .to(car.scale, { x: 1.5, y: 1.5, z: 1.5, duration: 1 }, "label")
-                .to(car.rotation, { y: 0.5, duration: 1 }, "label");
+                .to(car.scale, { x: 2, y: 2, z: 2, duration: 1 }, "label")
+                .to(car.rotation, { y: 0.5, duration: 1 }, "label")
+                .to(car.position, { x: -50 }, "label");
         }
     }
 

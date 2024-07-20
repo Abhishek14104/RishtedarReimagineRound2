@@ -13,6 +13,7 @@ import Exp from './sections/Exp';
 import JourneyToPerfection from './components/JourneyToPerfection';
 import Social from './sections/Social';
 import SocialMobile from './sections/SocialMobile';
+import Footer from './sections/Footer';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <ModelSection />
         <Social />
         <SocialMobile />
+        <Footer />
       </div>
     </ReactLenis>
   )

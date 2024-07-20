@@ -13,7 +13,9 @@ const SocialCard = ({ photo, desc }) => {
                     </svg>
                 </div>
             </div>
-            <img className="md:w-[90%] w-full md:rounded-xl object-cover" src={photo} alt="Post" />
+            <div className='md:w-[90%] w-full md:rounded-xl overflow-hidden '>
+                <img className="object-cover hover:scale-105 transition-all" src={photo} alt="Post" />
+            </div>
             <div className="mt-4 justify-start w-[90%]">
                 <p className="mt-1 font-normal">
                     <span className='opacity-80'>{desc}</span>

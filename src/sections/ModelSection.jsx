@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import useMouse from '@react-hook/mouse-position'
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion'
 import pic718 from '../assets/models/718.webp'
 import pic911 from '../assets/models/911.png'
@@ -23,6 +24,59 @@ export default function ModelSection() {
     let isMobile = false;
     if (window.innerWidth < 768) {
         isMobile = true;
+    }
+
+    const [cursorText, setCursorText] = useState("Hover.");
+    const [cursorVariant, setCursorVariant] = useState("default");
+
+    const ref2 = useRef(null);
+    const mouse = useMouse(ref2, {
+        enterDelay: 100,
+        leaveDelay: 100
+    });
+
+    let mouseXPosition = 0;
+    let mouseYPosition = 0;
+
+    if (mouse.x !== null) {
+        mouseXPosition = mouse.clientX;
+    }
+
+    if (mouse.y !== null) {
+        mouseYPosition = mouse.clientY;
+    }
+
+    const variants = {
+        default: {
+            opacity: 1,
+            // backgroundColor: "rgba(255, 255, 255, 0.6)",
+            backgroundColor: "#ffffff",
+            height: 50,
+            width: 100,
+            fontSize: "18px",
+            x: mouseXPosition + 20,
+            y: mouseYPosition + 5
+        },
+        hover: {
+            opacity: 0,
+            x: mouseXPosition + 20,
+            y: mouseYPosition + 5
+        }
+    };
+
+    const spring = {
+        type: "spring",
+        stiffness: 2000,
+        damping: 50
+    };
+
+    function outside(event) {
+        setCursorText("Hover.");
+        setCursorVariant("default");
+    }
+    function inside(event) {
+        setCursorText("");
+        setCursorVariant("hover");
     }
 
     const [modelId, setModelId] = useState(0);
@@ -75,8 +129,15 @@ export default function ModelSection() {
                         )
                     })}
                 </motion.div>
-                <motion.div style={{ display: modelShow && (!isMobile) ? "block" : "none", opacity: modelOpacity }} className='w-full h-screen absolute top-0'>
-                    <div className='w-full h-screen absolute'>
+                <motion.div ref={ref2} style={{ display: modelShow && (!isMobile) ? "block" : "none", opacity: modelOpacity }} className='w-full h-screen absolute top-0'>
+                    <motion.div
+                        variants={variants}
+                        className="rounded-3xl absolute cursor-default flex justify-center items-center z-50"
+                        animate={cursorVariant}
+                    >
+                        <p className='text-black'>{cursorText}</p>
+                    </motion.div>
+                    <div className='w-full h-screen absolute' >
                         {models.map((model) => {
                             return (
                                 <motion.div
@@ -91,7 +152,7 @@ export default function ModelSection() {
                             )
                         })}
                     </div>
-                    <div className='text-white absolute right-[10vw] top-[10vh] uppercase text-[28px] font-semibold flex flex-col justify-start gap-0'>
+                    <div onMouseEnter={inside} onMouseLeave={outside} className='text-white absolute right-[10vw] top-[10vh] uppercase text-[28px] font-semibold flex flex-col justify-start gap-0'>
                         {models.map((model) => {
                             return (
                                 <motion.p

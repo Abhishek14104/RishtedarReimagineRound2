@@ -1,6 +1,7 @@
 import React from 'react'
 import videoBg from '../assets/Experience/Porsche-bg.mp4';
 import TextReveal from '../components/TextReveal';
+import Button from '../components/Button';
 
 export default function Experience() {
     return (
@@ -21,14 +22,7 @@ export default function Experience() {
                         The new T-Hybrid technology was derived from motorsport and combines emotive engine sound with outstanding performance.
                     </TextReveal>
                 </div>
-
-                <div className='border-black font-semibold border-[2px] rounded-full md:text-[1.6vw] text-[5.5vw] md:py-9 py-5 md:px-10 px-8 w-fit flex items-center gap-2'>
-                    Discover The New 911
-                    <svg className='md:w-[2.5vw] w-[8vw]' viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 34L34 14M34 14H14M34 14V34" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-
-                </div>
+                <Button text={"Discover the new 911"} />
             </div>
         </div>
     )

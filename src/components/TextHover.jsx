@@ -49,7 +49,7 @@ export default function TextHover({ children, underline = true, leading = 1 }) {
                     hover: { width: "100%" }
                 }}
                 style={{ display: underline?"block":"none"}}
-                className='absolute w-full mix-blend-exclusion bg-white h-[2px] left-0 -bottom-1'></motion.div>
+                className='absolute w-full bg-black h-[2px] left-0 -bottom-1'></motion.div>
         </motion.div>
     )
 }

@@ -5,7 +5,7 @@ const SocialCard = ({ photo, desc }) => {
     return (
         <div className="md:w-[28vw] w-full h-fit bg-opacity-10 bg-white text-white md:rounded-3xl rounded-xl overflow-hidden shadow-lg md:pb-6 pb-4 md:pt-3 whitespace-nowrap flex flex-col items-center">
             <div className="flex items-center justify-start w-[90%] py-3">
-                <img className="md:h-8 h-6 md:w-8 w-6 rounded-full" src={dp} alt="Profile" loading='lazy' />
+                <img className="md:h-8 h-6 md:w-8 w-6 rounded-full" src={dp} alt="Profile" />
                 <div className="ml-3 flex items-center">
                     <span className="text-sm font-semibold">porsche</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(0, 149, 246)" viewBox="0 0 40 40" stroke="currentColor" className="h-[12px] w-[12px] text-blue-600 ml-2">

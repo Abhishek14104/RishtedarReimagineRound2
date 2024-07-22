@@ -18,7 +18,7 @@ export default function TextHover({ children, underline = true, leading = 1 }) {
                                         hover: { rotate: -20, y: "-180%" }
                                     }}
                                     transition={{
-                                        duration: 0.2,
+                                        duration: 0.25,
                                         ease: "easeInOut"
                                     }}
                                     className='flex flex-row w-fit'
@@ -31,7 +31,7 @@ export default function TextHover({ children, underline = true, leading = 1 }) {
                                         hover: { rotate: 0, y: 0 }
                                     }}
                                     transition={{
-                                        duration: 0.2,
+                                        duration: 0.25,
                                         ease: "easeInOut"
                                     }}
                                     className='absolute'>

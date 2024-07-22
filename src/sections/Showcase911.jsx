@@ -23,6 +23,8 @@ export default function Showcase911() {
     const pic1scale = useTransform(scrollYProgress, [0, 0.6], [1.1, 0.9]);
     const textScroll = useTransform(scrollYProgress, [0.2, 1], ["50%", "-70%"]);
     const wheelRotate = useTransform(scrollYProgress, [0.2, 1], [0, -720]);
+    const slide1 = useTransform(scrollYProgress, [0.2, 0.9], ["-50%", "0%"]);
+    const slide2 = useTransform(scrollYProgress, [0.2, 0.9], ["50%", "0%"]);
 
     return (
         <div ref={ref} className=' w-full md:mt-[150px] mt-[100px] flex flex-col items-center overflow-hidden'>
@@ -52,8 +54,8 @@ export default function Showcase911() {
                 </p>
             </div>
             <div className='flex flex-row md:gap-10 gap-5 w-full relative md:-left-5 -left-2 my-[100px]'>
-                <img className='md:h-[85vh] h-[50vh] rounded-r-3xl w-[35%] object-cover' src={Pic3} />
-                <img className='md:h-[85vh] h-[50vh] rounded-l-3xl w-[65%] object-cover' src={Pic2} />
+                <motion.img style={{ x: slide1 }} className='md:h-[85vh] h-[50vh] rounded-r-3xl w-[35%] object-cover' src={Pic3} />
+                <motion.img style={{ x: slide2 }} className='md:h-[85vh] h-[50vh] rounded-l-3xl w-[65%] object-cover' src={Pic2} />
             </div>
         </div>
     )

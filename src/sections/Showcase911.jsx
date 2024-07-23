@@ -39,7 +39,7 @@ export default function Showcase911() {
                     {[1, 2, 3].map((index) => {
                         return (
                             <>
-                                <p key={index} className='px-4 tracking-normal'>{isMobile ? "The extraordinary" : "the one and always"}</p>
+                                <p key={index} className='px-4 tracking-normal'>the extraordinary</p>
                                 <motion.img style={{ rotate: wheelRotate, y: 0 }} className='h-[10vw] mx-10 relative' src={wheel} />
                             </>
                         )
@@ -54,8 +54,8 @@ export default function Showcase911() {
                 </p>
             </div>
             <div className='flex flex-row md:gap-10 gap-5 w-full relative md:-left-5 -left-2 my-[100px]'>
-                <motion.img style={{ x: slide1 }} className='md:h-[85vh] h-[50vh] rounded-r-3xl w-[35%] object-cover' src={Pic3} />
-                <motion.img style={{ x: slide2 }} className='md:h-[85vh] h-[50vh] rounded-l-3xl w-[65%] object-cover' src={Pic2} />
+                <img className='md:h-[85vh] h-[50vh] rounded-r-3xl w-[35%] object-cover' src={Pic3} />
+                <img className='md:h-[85vh] h-[50vh] rounded-l-3xl w-[65%] object-cover' src={Pic2} />
             </div>
         </div>
     )

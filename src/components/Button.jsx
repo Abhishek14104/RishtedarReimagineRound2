@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import TextHover from './TextHover'
 
 export default function Button({ text }) {
     return (
@@ -10,7 +11,9 @@ export default function Button({ text }) {
                     hover: { bottom: "0%", scale: 1 }
                 }}
                 className='bg-black absolute bottom-0 left-0 rounded-full w-full h-full'></motion.div>
-            <motion.p className='mix-blend-difference text-white'>{text}</motion.p>
+            <motion.p className='mix-blend-difference text-white'>
+                    {text}
+            </motion.p>
             <div className='relative'>
                 <motion.svg
                     variants={{
@@ -24,7 +27,7 @@ export default function Button({ text }) {
                     variants={{
                         initial: { y: 25, x: -25, opacity: 0 },
                         hover: { y: 0, x: 0, opacity: 1 },
-                        tap: {scale: 1.5 }
+                        tap: { scale: 1.5 }
                     }}
                     className='md:w-[2.5vw] w-[8vw] absolute top-0' viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 34L34 14M34 14H14M34 14V34" stroke='#ffffff' strokeWidth="3.5" stroke-linecap="round" stroke-linejoin="round" />

@@ -1,38 +1,39 @@
 import React from 'react'
 import vid from '../assets/LandingPage/LPVideo.mp4';
 import logo from '../assets/logo.svg'
+import TextHover from '../components/TextHover';
 
 export default function Footer() {
     return (
         <div className='flex flex-col w-full bg-black text-white'>
             <div className='flex flex-col md:flex-row justify-around gap-10 md:gap-0 ml-5 md:ml-0 my-20'>
                 <div>
-                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 md:mb-2 mb-5'>Build & Find</h3>
-                    <ul className='opacity-50 flex flex-col gap-1'>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Build your Porsche</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Compare Models</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Search Pre-Owned</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Find your Porsche Centre</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Download the model range catalogue</a></li>
+                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 mb-5'>Build & Find</h3>
+                    <ul className='opacity-50 flex flex-col gap-3'>
+                        <li className='md:text-[1.5vw] text-lg'><a className='w-fit' href="#"><TextHover>Build your Porsche</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a className='w-fit' href="#"><TextHover>Compare Models</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a className='w-fit' href="#"><TextHover>Search Pre-Owned</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a className='w-fit' href="#"><TextHover>Find your Porsche Centre</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a className='w-fit' href="#"><TextHover>Download the model range catalogue</TextHover></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 md:mb-2 mb-5'>Behind the Scenes</h3>
-                    <ul className='opacity-50 flex flex-col gap-1'>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Passion Motorsports</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Porsche Experience</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Porsche Classic</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Visit Porsche Museum</a></li>
+                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 mb-5'>Behind the Scenes</h3>
+                    <ul className='opacity-50 flex flex-col gap-3'>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Passion Motorsports</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Porsche Experience</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Porsche Classic</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Visit Porsche Museum</TextHover></a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 md:mb-2 mb-5'>Porsche Company</h3>
-                    <ul className='opacity-50 flex flex-col gap-1'>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Latest News</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">At a Glance</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Jobs & Careers</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Contact & Information</a></li>
-                        <li className='md:text-[1.5vw] text-lg'><a href="#">Christophorus - The Porsche Magazine</a></li>
+                    <h3 className='md:text-[3vw] text-5xl font-semibold opacity-80 mb-5'>Porsche Company</h3>
+                    <ul className='opacity-50 flex flex-col gap-3'>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Latest News</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>At a Glance</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Jobs & Careers</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Contact & Information</TextHover></a></li>
+                        <li className='md:text-[1.5vw] text-lg'><a href="#"><TextHover>Christophorus - The Porsche Magazine</TextHover></a></li>
                     </ul>
                 </div>
             </div>

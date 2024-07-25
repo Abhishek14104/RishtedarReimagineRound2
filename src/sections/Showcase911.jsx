@@ -5,6 +5,7 @@ import Pic1 from '../assets/911/911-pic3.png'
 import Pic2 from '../assets/911/911-pic2.png'
 import Pic3 from '../assets/911/911-pic1.png'
 import wheel from '../assets/911/wheel2.png'
+import LPvideo from '../assets/LandingPage/LPVideo.mp4';
 import TextReveal from '../components/TextReveal'
 
 export default function Showcase911() {
@@ -17,10 +18,10 @@ export default function Showcase911() {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start end", "end end"]
+        offset: ["start end", "end start"]
     })
 
-    const pic1scale = useTransform(scrollYProgress, [0, 0.6], [1.1, 0.9]);
+    const pic1scale = useTransform(scrollYProgress, [0, 0.6], [0.9, 1.1]);
     const textScroll = useTransform(scrollYProgress, [0.2, 1], ["50%", "-70%"]);
     const wheelRotate = useTransform(scrollYProgress, [0.2, 1], [0, -720]);
     const slide1 = useTransform(scrollYProgress, [0.2, 0.9], ["-50%", "0%"]);
@@ -30,9 +31,17 @@ export default function Showcase911() {
         <div ref={ref} className=' w-full md:mt-[150px] mt-[100px] flex flex-col items-center overflow-hidden'>
             <div className='w-full flex flex-col items-center'>
                 <img src={logo911} className='md:w-[200px] w-[100px]' />
-                <motion.img style={{ scale: isMobile ? 1.2 : pic1scale }} src={Pic1} className='rounded-3xl md:mt-[100px] mt-10' />
+                <motion.img style={{ scale: isMobile ? 1.2 : pic1scale }} src={Pic1} className='hidden rounded-3xl md:mt-[100px] mt-10' />
+                <motion.video
+                    autoPlay
+                    muted
+                    loop
+                    src={LPvideo}
+                    style={{ filter: "brightness(80%)", scale: pic1scale }}
+                    className="w-full h-screen rounded-3xl mt-10 object-cover -z-50"
+                />
             </div>
-            <div className='overflow-hidden w-full'>
+            <div className='overflow-hidden w-full mt-10'>
                 <motion.div
                     style={{ x: textScroll }}
                     className='uppercase flex md:text-[10vw] text-[30vw] h-fit font-semibold md:font-normal whitespace-nowrap items-center'>
@@ -47,16 +56,13 @@ export default function Showcase911() {
                 </motion.div>
             </div>
             <div className='flex justify-center'>
-                <p className='md:text-[1.8vw] text-base md:w-[45vw] w-[90%] text-center leading-[1.15]'>
+                <p className='md:text-[1.8vw] md:mt-10 text-base md:w-[45vw] w-[90%] text-center leading-[1.15]'>
                     <TextReveal stagger={0.01}>
                         Crucial to the unique 911 driving experience: the optimal set-up. This includes new engine mounts, a completely revised chassis, and even wider wheels to transform the increased power output into breathtaking dynamics.
                     </TextReveal>
                 </p>
             </div>
-            <div className='flex flex-row md:gap-10 gap-5 w-full relative md:-left-5 -left-2 my-[100px]'>
-                <img className='md:h-[85vh] h-[50vh] rounded-r-3xl w-[35%] object-cover' src={Pic3} />
-                <img className='md:h-[85vh] h-[50vh] rounded-l-3xl w-[65%] object-cover' src={Pic2} />
-            </div>
+            
         </div>
     )
 }

@@ -8,10 +8,10 @@ export default function TextHover({ children, underline = true, leading = 1 }) {
             whileHover="hover"
             className='w-full relative cursor-pointer'>
             <div className='overflow-hidden relative flex w-full justify-center items-center' style={{ lineHeight: leading }}>
-                <motion.div initial="initial" whileHover="hover" transition={{ staggerChildren: 0.02}} className='relative flex w-full justify-center items-center'>
+                <motion.div initial="initial" whileHover="hover" transition={{ staggerChildren: 0.02}} className='relative flex w-full justify-start items-start'>
                     {children.split(" ").map((word, index) => {
                         return (
-                            <div key={index}  className='relative flex w-full justify-center items-center'>
+                            <div key={index}  className='relative flex w-fit justify-center items-center'>
                                 <motion.div
                                     variants={{
                                         initial: { rotate: 0, y: 0 },

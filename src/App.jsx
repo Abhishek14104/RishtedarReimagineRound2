@@ -14,6 +14,7 @@ import JourneyToPerfection from './components/JourneyToPerfection';
 import Social from './sections/Social';
 import SocialMobile from './sections/SocialMobile';
 import Footer from './sections/Footer';
+import Features from './sections/Features';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         <JourneyToPerfection />
         <Experience />
         <Showcase911 />
+        <Features />
         <ModelSection />
         <Social />
         <SocialMobile />

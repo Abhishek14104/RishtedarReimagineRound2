@@ -135,7 +135,7 @@ export default function ModelSection() {
                         className="rounded-3xl absolute cursor-default flex justify-center items-center z-50"
                         animate={cursorVariant}
                     >
-                        <p className='text-black'>{cursorText}</p>
+                        <p className='text-black font-semibold'>{cursorText}</p>
                     </motion.div>
                     <div className='w-full h-screen absolute' >
                         {models.map((model) => {

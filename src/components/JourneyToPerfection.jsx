@@ -3,8 +3,8 @@ import TextReveal from './TextReveal';
 
 const JourneyToPerfection = () => {
     return (
-        <div className="flex flex-col items-center text-center md:my-[150px] my-[100px]">
-            <h1 className="md:text-[5.5vw] text-[15vw] font-bold mb-20">
+        <div className="flex flex-col items-center text-center md:mt-[150px] md:mb-[50px] my-[100px]">
+            <h1 className="md:text-[5.5vw] text-[15vw] font-bold mb-10">
                 <TextReveal stagger={0.1}>
                     JOURNEY TO PERFECTION
                 </TextReveal>

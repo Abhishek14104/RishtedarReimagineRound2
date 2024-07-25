@@ -1,4 +1,4 @@
-# Let's Re-Imagine Porsche with Rishtedars
+# Re-Imagine Porsche with Rishtedars
 Welcome to the reimagined Porsche website, designed for a modern and engaging user experience. Our redesign focuses on delivering an enhanced digital presence for Porsche, integrating innovative design elements and performance optimization.
 
 - **Live Preview**: [here](https://rishtedar-reimagine-round2.vercel.app/)
